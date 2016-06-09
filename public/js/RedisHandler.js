@@ -21,14 +21,9 @@ var RedisHandler = function(){
         deleteById: function(o){
             var id = o.id;
             var type = o.type;
-            _self.util.notyConfirm("Are you sure you want to delete the job of type "+ type + " with ID #"+id+"?", function(){
-                _self.util.blockUI();
-                $.getJSON(window.basepath + "/api/jobs/delete/id/"+type+"/"+id).done(function(response){
-                    _self.util.handleAjaxResponse(response);
-                    dataModel.fn.refreshViewModel(true);
-                }).always(function(){
-                    $.unblockUI();
-                });
+            $.getJSON(window.basepath + "/api/jobs/delete/id/"+type+"/"+id).done(function(response){
+                _self.util.handleAjaxResponse(response);
+                dataModel.fn.refreshViewModel(true);
             });
         },
         deleteByStatus: function(status){
