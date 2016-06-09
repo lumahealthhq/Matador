@@ -10,7 +10,7 @@ Matador
         <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><i class="fa fa-cog"></i> <span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="#" onclick="redisHandler.fn.deleteByStatus('{type}');">Delete all {type} jobs</a></li>
-            {@if cond="'{type}'!='Pending'"}<li><a href="#" onclick="redisHandler.fn.pendingByStatus('{type}');">Revert all {type} jobs to Pending</a></li>{/if}
+            <li><a href="#" onclick="redisHandler.fn.pendingByStatus('{type}');">Revert all {type} jobs to Pending</a></li>
         </ul>
     </span>
 </h1>
