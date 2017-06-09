@@ -5,6 +5,15 @@ Matador
 {/title}
 
 {<body}
+<h1 class="page-header">{type} <span class="btn-group">
+    <span>
+        <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><i class="fa fa-cog"></i> <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#" onclick="redisHandler.fn.deleteByStatus('stuck');">Delete all stuck jobs jobs</a></li>
+            <li><a href="#" onclick="redisHandler.fn.pendingByStatus('stuck');">Revert all stuck jobs to Pending</a></li>
+        </ul>
+    </span>
+</h1>
 <div data-bind="visible:!$.isEmptyObject(memory())">
     <h1 class="page-header">Dashboard</h1>
     <div class="row placeholders">

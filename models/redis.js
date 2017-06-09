@@ -238,7 +238,7 @@ var removeJobs = function(list){
 
 var makePendingByType = function(type){
     type = type.toLowerCase();
-    var validTypes = ['active', 'complete', 'failed', 'wait']; //I could add stuck, but I won't support mass modifying "stuck" jobs because it's very possible for things to be in a "stuck" state temporarily, while transitioning between states
+    var validTypes = ['active', 'complete', 'failed', 'wait', 'stuck']; //I could add stuck, but I won't support mass modifying "stuck" jobs because it's very possible for things to be in a "stuck" state temporarily, while transitioning between states
     var dfd = q.defer();
     if(validTypes.indexOf(type) === -1) {
         dfd.resolve({success:false, message:"Invalid type: "+type+" not in list of supported types"});
